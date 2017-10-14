@@ -7,5 +7,5 @@ Você pode instalar este plugin no seu aplicativo CakePHP usando [composer](http
 Instalação via composer:
 
 ```
-composer require anderson/Places
+composer require andersoncorso/cakephp-plugin_places
 ```
