@@ -13,4 +13,22 @@ use Places\Controller\AppController;
 class RegioesController extends AppController
 {
 
+
+	/**
+	 * Retorna um array lista de regiões do Brasil
+	 * 
+	 * @param none
+	 * @return array
+	 */
+	public function list(){
+
+		$this->autoRender = false; // avoid to render view
+
+		$query = $this->Regioes->find('list', ['limit'=>10000]);
+		$regioes = $query->toArray();
+
+		$this->set(compact('regioes'));
+		$this->set('_serialize', ['regioes']);
+	}
+
 }

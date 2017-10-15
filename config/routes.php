@@ -7,6 +7,8 @@ Router::plugin(
     'Places',
     ['path' => '/places'],
     function (RouteBuilder $routes) {
+
+    	$routes->setExtensions(['json']); // Allow json extension
         $routes->fallbacks(DashedRoute::class);
     }
 );
