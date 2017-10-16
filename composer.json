@@ -21,7 +21,7 @@
 		}
 	},
     "extra": {
-        "installer-name": "Places"
+        // "installer-name": "Places"
     },
 	"minimum-stability": "dev",
 	"prefer-stable": true
