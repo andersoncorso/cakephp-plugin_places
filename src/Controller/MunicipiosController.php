@@ -27,8 +27,6 @@ class MunicipiosController extends AppController
 	 */
 	public function listByState(){
 
-		$this->autoRender = false; // avoid to render view
-
 		$query = $this->Municipios->find('list', ['limit'=>10000]);
 
 		if($this->request->query('estado_id')){
@@ -41,9 +39,7 @@ class MunicipiosController extends AppController
 		}
 
 		$municipios = $query->toArray();
-
 		$this->set(compact('municipios'));
-		$this->set('_serialize', ['municipios']);
 	}
 
 }

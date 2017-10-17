@@ -22,13 +22,10 @@ class RegioesController extends AppController
 	 */
 	public function list(){
 
-		$this->autoRender = false; // avoid to render view
-
 		$query = $this->Regioes->find('list', ['limit'=>10000]);
 		$regioes = $query->toArray();
 
 		$this->set(compact('regioes'));
-		$this->set('_serialize', ['regioes']);
 	}
 
 }

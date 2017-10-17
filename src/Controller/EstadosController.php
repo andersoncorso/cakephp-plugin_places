@@ -27,8 +27,6 @@ class EstadosController extends AppController
 	 */
 	public function listByRegion(){
 
-		$this->autoRender = false; // avoid to render view
-
 		$query = $this->Estados->find('list', ['limit'=>10000]);
 		if($this->request->query('regiao_id')){
 			$var = $this->request->query('regiao_id');
@@ -38,7 +36,6 @@ class EstadosController extends AppController
 		$estados = $query->toArray();
 
 		$this->set(compact('estados'));
-		$this->set('_serialize', ['estados']);
 	}
 
 }
