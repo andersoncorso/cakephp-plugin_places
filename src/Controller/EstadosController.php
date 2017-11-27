@@ -37,7 +37,7 @@ class EstadosController extends AppController
 			$value = $each['value'];
 		}
 
-		$query = $this->Estados->find('list', ['limit'=>10000]);
+		$query = $this->Estados->find('list', ['limit'=>10000])
 			->where(['regiao_id'=>$value]);
 
 		$estados = $query->toArray();
