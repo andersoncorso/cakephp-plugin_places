@@ -15,6 +15,7 @@ class EstadosController extends AppController
 
 	public function initialize() {
 		parent::initialize();
+		$this->Auth->allow('listByRegion');
 		
 		$this->loadComponent('RequestHandler');
 	}
@@ -27,14 +28,19 @@ class EstadosController extends AppController
 	 */
 	public function listByRegion(){
 
-		$query = $this->Estados->find('list', ['limit'=>10000]);
-		if($this->request->query('regiao_id')){
-			$var = $this->request->query('regiao_id');
-			$query->where(['regiao_id'=>$var]);
+		# (solução temporária)
+		# procurar solução mais adequada para extrair o valor, caso seja array multidimensional
+		$each = each($this->request->query);
+		$value = $each['value'];
+		if(is_array($value)){
+			$each = each($value);
+			$value = $each['value'];
 		}
 
-		$estados = $query->toArray();
+		$query = $this->Estados->find('list', ['limit'=>10000]);
+			->where(['regiao_id'=>$value]);
 
+		$estados = $query->toArray();
 		$this->set(compact('estados'));
 	}
 

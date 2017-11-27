@@ -13,6 +13,12 @@ use Places\Controller\AppController;
 class RegioesController extends AppController
 {
 
+	public function initialize() {
+		parent::initialize();
+		$this->Auth->allow('list');
+		
+		$this->loadComponent('RequestHandler');
+	}
 
 	/**
 	 * Retorna um array lista de regiões do Brasil
