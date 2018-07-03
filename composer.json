@@ -1,8 +1,22 @@
 {
 	"name": "andersoncorso/cakephp-plugin_places",
-	"description": "Places plugin for CakePHP",
+	"description": "Places plugin for CakePHP 3x",
 	"type": "cakephp-plugin",
+	"keywords": [
+		"cakephp", "places"
+	],
+	"homepage": "https://github.com/andersoncorso/cakephp-plugin_places",
 	"license": "MIT",
+    "authors": [
+        {
+            "name": "Anderson",
+            "email": "andersoncorso89@gmail.com",
+            "homepage": "https://github.com/andersoncorso"
+        }
+    ],
+	"require": {
+		"cakephp/cakephp": "^3.5"
+	},
 	"autoload": {
 		"psr-4": {
 			"Places\\": "src"
@@ -11,9 +25,7 @@
 	"autoload-dev": {
 		"psr-4": {
 			"Places\\Test\\": "tests",
-			"Cake\\Test\\": "./vendor/cakephp/cakephp/tests"
+			"Cake\\Test\\": "./vendor/andersoncorso/cakephp-plugin_places/tests"
 		}
-	},
-	"minimum-stability": "dev",
-	"prefer-stable": true
+	}
 }
